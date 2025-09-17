@@ -1,0 +1,16 @@
+modLoader="javafml"
+loaderVersion="[36,)"
+license="MIT"
+issueTrackerURL=""
+[[mods]]
+modId="gencounters"
+version="1.0.0"
+displayName="Grass Encounters"
+updateJSONURL=""
+displayURL=""
+logoFile=""
+credits=""
+authors="Server Automation"
+description='''
+Adds configurable Pixelmon encounters triggered by grass.
+'''
