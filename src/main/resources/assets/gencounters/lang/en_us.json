@@ -1,0 +1,20 @@
+{
+  "item.gencounters.selection_wand": "Pixelmon Encounter Wand",
+  "message.gencounters.wand.given": "You feel attuned to the grass around you.",
+  "message.gencounters.selection.first": "First position set to %s, %s, %s.",
+  "message.gencounters.selection.second": "Second position set to %s, %s, %s.",
+  "message.gencounters.selection.prompt": "Use /pencounter create <name> <minLevel> <maxLevel> <rarity> to store this region.",
+  "message.gencounters.area.created": "Encounter area '%s' saved.",
+  "message.gencounters.area.pokemon_added": "Added %s to area %s.",
+  "message.gencounters.area.pokemon_removed": "Removed %s from area %s.",
+  "message.gencounters.area.pokemon_missing": "%s is not configured for area %s.",
+  "message.gencounters.area.deleted": "Deleted encounter area %s.",
+  "message.gencounters.area.none": "No encounter areas are configured.",
+  "message.gencounters.area.entry": "Area %s (Lv.%s-%s) rarity %.2f with %s Pokémon options.",
+  "message.gencounters.area.rarity": "Updated rarity for %s to %.2f.",
+  "message.gencounters.area.levels": "Updated level range for %s to %s-%s.",
+  "message.gencounters.encounter.trigger": "A wild %s (Lv.%s) appeared! Shiny: %s",
+  "message.gencounters.area_not_found": "That encounter area could not be found.",
+  "command.gencounters.no_selection": "Select two corners with the wand before creating an encounter area.",
+  "command.gencounters.area_not_found": "No encounter area exists by that name."
+}

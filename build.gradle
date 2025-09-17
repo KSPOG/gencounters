@@ -1,0 +1,85 @@
+plugins {
+    id 'java'
+    id 'eclipse'
+    id 'maven-publish'
+    id 'net.minecraftforge.gradle' version '5.1.+' apply true
+}
+
+version = '1.0.0'
+group = 'com.gencounters'
+archivesBaseName = 'gencounters'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(8)
+    }
+}
+
+minecraft {
+    mappings channel: project.property('mapping_channel'), version: project.property('mapping_version')
+
+    runs {
+        client {
+            workingDirectory project.file('run')
+            property 'forge.logging.console.level', 'debug'
+            mods {
+                gencounters {
+                    source sourceSets.main
+                }
+            }
+        }
+        server {
+            workingDirectory project.file('run')
+            property 'forge.logging.console.level', 'debug'
+            mods {
+                gencounters {
+                    source sourceSets.main
+                }
+            }
+        }
+        data {
+            workingDirectory project.file('run')
+            args '--mod', 'gencounters', '--all', '--output', file('src/generated/resources/')
+            property 'forge.logging.console.level', 'debug'
+            mods {
+                gencounters {
+                    source sourceSets.main
+                }
+            }
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'Forge'
+        url = 'https://maven.minecraftforge.net'
+    }
+}
+
+dependencies {
+    minecraft "net.minecraftforge:forge:${project.property('minecraft_version')}-${project.property('forge_version')}"
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDirs += 'src/generated/resources'
+        }
+    }
+}
+
+jar {
+    manifest {
+        attributes(
+                'Specification-Title': 'gencounters',
+                'Specification-Vendor': 'gencounters',
+                'Specification-Version': '1',
+                'Implementation-Title': project.name,
+                'Implementation-Version': project.version,
+                'Implementation-Vendor': 'gencounters'
+        )
+    }
+}
+
