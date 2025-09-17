@@ -3,6 +3,7 @@ plugins {
     id 'eclipse'
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '5.1.+' apply true
+
 }
 
 version = '1.0.0'
@@ -17,6 +18,21 @@ java {
 
 minecraft {
     mappings channel: project.property('mapping_channel'), version: project.property('mapping_version')
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'Forge'
+        url = 'https://maven.minecraftforge.net'
+    }
+}
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.16.5-36.2.39'
+}
+
+minecraft {
+    mappings channel: 'official', version: '1.16.5'
 
     runs {
         client {
@@ -36,6 +52,11 @@ minecraft {
                     source sourceSets.main
                 }
             }
+            source sourceSets.main
+        }
+        server {
+            workingDirectory project.file('run')
+            source sourceSets.main
         }
         data {
             workingDirectory project.file('run')
@@ -60,6 +81,11 @@ repositories {
 
 dependencies {
     minecraft "net.minecraftforge:forge:${project.property('minecraft_version')}-${project.property('forge_version')}"
+}
+
+            source sourceSets.main
+        }
+    }
 }
 
 sourceSets {
